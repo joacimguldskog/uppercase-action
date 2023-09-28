@@ -1,0 +1,17 @@
+run-name: Test the action
+on: push
+
+jobs:
+  test-our-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the action with inputs
+        uses: ./
+        id: our-action
+        with:
+          text: "stryda meetup"
+
+      - name: "Log the output"
+        run: echo "The output was ${{ steps.our-action.outputs.textUppercase }}"

@@ -1,0 +1,13 @@
+name: "Text to uppercase action"
+description: "This is a custom action from meetup"
+inputs:
+  text:
+    description: "Text to uppercase"
+    required: true
+    default: "placeholder text"
+output:
+  textUppercase:
+    description: "Uppercase text"
+runs:
+  using: "node20"
+  main: "dist/index.js"
